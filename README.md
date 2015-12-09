@@ -25,11 +25,13 @@ callback创建成功回调函数
 
         data = [
             {
-                name: jackson
+                name: jackson,
+                age: 24,
                 id: 1
             },
             {
-                name: mack
+                name: mack,
+                age: 22,
                 id: 2
             }
         ]
