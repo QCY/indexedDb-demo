@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<style>
+	body {
+		font-family: arial;
+	}
+	.container {
+		width: 100%;
+		padding: 5px;
+		text-align: center;
+	}
+	table {
+		width: 75%;
+    	margin: 1em auto;
+		border-collapse: collapse;
+	}
+	table th {
+		padding: 0.8em 1.2em;
+		border: 1px solid #666666;
+		background-color: #cccccc;
+	}
+	table td {
+		padding: 8px;
+		border: 1px solid #666666;
+	}
+	.btn-delete {
+		color: red;
+		cursor: pointer;
+	}
+	.btn-delete:hover {
+		background: #cccccc;
+	}
+</style>
+<head>
+<title>IndexedDb</title>
+</head>
+<body>
+
+	<div class="container">
+		<div class="field">
+			<label>
+				name:
+				<input type="text" name="username" id="name">
+			</label>
+			<label>
+				age:
+				<input type="text" name="age" id="age">
+			</label>
+			<label>
+				sex:
+				<input type="text" name="sex" id="sex">
+			</label>
+			<input type="button" value="save" id="btn-confirm">
+			<input type="button" value="delete" id="delete-all">
+		</div>
+
+		<div class="list">
+			<table>
+				<thead>
+					<th>name</th>
+					<th>age</th>
+					<th>sex</th>
+					<th>operate</th>
+				</thead>
+				<tbody id="table-body"></tbody>
+			</table>
+		</div>
+	</div>
+
+<script src="indexedDb.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
