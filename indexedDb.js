@@ -2,7 +2,12 @@ var IndexedDb = (function() {
 	if ('indexedDB' in window) {
 
 		var db;
-
+		/**
+		 * 创建indexedDB实例
+		 * @param {string} name db名字
+		 * @param {array} store 仓库名字
+		 * @param {function}  onSuccess 添加成功回调函数
+		 */
 		var IndexedDb = function(name, store, onSuccess) {
 			this.name = name;
 			this.store = store;
@@ -28,10 +33,10 @@ var IndexedDb = (function() {
 
 		/**
 		 * 添加数据
-		 * @param {store} 仓库名
-		 * @param {data} 添加的数据
-		 * @param {func}  添加成功回调函数
-		 * @param {type}  操作类型
+		 * @param {string} store 仓库名
+		 * @param {array} data  添加的数据
+		 * @param {function} func  添加成功回调函数
+		 * @param {string} type  操作类型
 		 */
 		IndexedDb.prototype.add = function(store, data, func, type) {
 			type = type || 'readwrite';
@@ -56,10 +61,10 @@ var IndexedDb = (function() {
 
 		/**
 		 * 读取数据
-		 * @param {store} 仓库名
-		 * @param {key}   读取的数据键名
-		 * @param {func}  读取成功回调函数
-		 * @param {type}  操作类型
+		 * @param {string} store 仓库名
+		 * @param {array} key   读取的数据键名
+		 * @param {function} func  读取成功回调函数
+		 * @param {string} type  操作类型
 		 */
 		IndexedDb.prototype.get = function(store, key, func, type) {
 			type = type || 'readonly';
@@ -85,10 +90,10 @@ var IndexedDb = (function() {
 
 		/**
 		 * 更新数据
-		 * @param {store} 仓库名
-		 * @param {data}  更新的数据
-		 * @param {func}  添加成功回调函数
-		 * @param {type}  操作类型
+		 * @param {string} store 仓库名
+		 * @param {array} data  更新的数据
+		 * @param {function} func  添加成功回调函数
+		 * @param {string} type  操作类型
 		 */
 		IndexedDb.prototype.put = function(store, data, func, type) {
 			type = type || 'readwrite';
@@ -113,10 +118,10 @@ var IndexedDb = (function() {
 
 		/**
 		 * 删除数据
-		 * @param {store} 仓库名
-		 * @param {key}   删除的数据键名
-		 * @param {func}  读取成功回调函数
-		 * @param {type}  操作类型
+		 * @param {string} store 仓库名
+		 * @param {array} key  删除的数据键名
+		 * @param {function} func  读取成功回调函数
+		 * @param {string} type  操作类型
 		 */
 		IndexedDb.prototype.delete = function(store, key, func, type) {
 			type = type || 'readwrite';
@@ -137,8 +142,8 @@ var IndexedDb = (function() {
 
 		/**
 		 * 读取全部数据
-		 * @param {store} 仓库名
-		 * @param {func}  读取成功回调函数
+		 * @param {string} store 仓库名
+		 * @param {function} func  读取成功回调函数
 		 */
 		IndexedDb.prototype.getAll = function(store, func) {
 			var type = 'readonly',
@@ -162,8 +167,8 @@ var IndexedDb = (function() {
 
 		/**
 		 * 删除全部数据
-		 * @param {store} 仓库名
-		 * @param {func}  删除成功回调函数
+		 * @param {string} store 仓库名
+		 * @param {function} func  删除成功回调函数
 		 */
 		IndexedDb.prototype.deleteAll = function(store, func) {
 			var type = 'readonly',
